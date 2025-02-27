@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  frontend:
+    image: eakkasitnim/234-deploylab-frontend:latest
+    pull_policy: always
+    port:
+    - "8080:80"
