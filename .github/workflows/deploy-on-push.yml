@@ -25,7 +25,7 @@ jobs:
     -
       name: prepare the docker-compose run
       run: |
-        ls -1
+        ls -l
     -
       name: Build and push
       uses: docker/build-push-action@v6
@@ -53,7 +53,7 @@ jobs:
         port: 22
         script: |
           cd /home/ubuntu/frontend
-          echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{secrets. DOCKER_HUB_USERNAME }} --password-stdin
+          echo ${{ secrets.DOCKER_HUB_TOKEN }} | docker login --username ${{secrets.DOCKER_HUB_USERNAME }} --password-stdin
           docker compose down
           docker compose pull
           docker compose up -d
